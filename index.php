@@ -1,9 +1,17 @@
+<html>
+<head>
+    <link href="calendar.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+
 <?php
     include("Database.php");
     include("Event.php");
+    include("Calendar.php");
 
-    $newEvent = new Event();
-
-   // $newEvent->addEvent("New Event", "2014-12-03", "NULL", "UNLIMITED", "DAILY");
-
-    $newEvent->getEvent(1);
+    $calendar = new Calendar();
+    echo $calendar->show();
+?>
+<button type="button" onclick="window.open('EventCreationForm.php')">New Event</button>
+</body>
+</html>
